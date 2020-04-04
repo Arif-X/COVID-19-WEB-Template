@@ -968,81 +968,19 @@ h1, h2, h3, h4, h5,
         margin: 0;
         padding: 0; }
 
-.listing-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px; }
-  .listing-item:after {
-    position: absolute;
-    content: "";
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.4); }
-  .listing-item img {
-    -o-object-fit: cover;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    -webkit-transition: .3s all ease;
-    -o-transition: .3s all ease;
-    transition: .3s all ease; }
-  .listing-item:hover img {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2); }
-  .listing-item .listing-item-content {
-    position: absolute;
-    bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    z-index: 2;
-    width: 100%; }
-    .listing-item .listing-item-content .category {
-      font-size: 12px;
-      display: inline-block;
-      padding: 5px 30px;
-      background: #32dbc6;
-      border-radius: 30px;
-      color: #fff;
-      letter-spacing: .2em;
-      text-transform: uppercase; }
-    .listing-item .listing-item-content h2 {
-      font-size: 22px; }
-      .listing-item .listing-item-content h2, .listing-item .listing-item-content h2 a {
-        color: #fff; }
-    .listing-item .listing-item-content span {
-      color: #fff; }
-    .listing-item .listing-item-content .address {
-      color: rgba(255, 255, 255, 0.8); }
-  .listing-item .bookmark {
-    position: absolute;
-    right: 20px;
-    bottom: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.3);
-    -webkit-transition: .3s all ease;
-    -o-transition: .3s all ease;
-    transition: .3s all ease; }
-    .listing-item .bookmark span {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
-    .listing-item .bookmark:hover {
-      background: #f23a2e; }
-      .listing-item .bookmark:hover span {
-        color: #fff; }
+.accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-header.collapsed:after {    
+    content: "\f067"; 
+}
 
-.accordion-item[aria-expanded="true"] {
-  color: #32dbc6; }
+.accordion .card-header {
+    background-color: #000;
+    color: #fff;
+}
 
 .social-media {
   display: inline-block;
