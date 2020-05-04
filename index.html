@@ -49,7 +49,7 @@
 		</div> 
 
 
-		<header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+		<header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target shadow-sm" role="banner">
 
 			<div class="container">
 				<div class="row align-items-center">
@@ -65,7 +65,8 @@
 								<li><a href="#gejala" class="nav-link">Gejala</a></li>
 								<li><a href="#jenis" class="nav-link">Jenis Pasien</a></li>
 								<li><a href="#faq" class="nav-link">FAQ</a></li>
-								<li><a href="#data" class="nav-link">Data Sebaran</a></li>
+								<li><a href="#checkup" class="nav-link">Self Check-Up</a></li>
+								<li><a href="#data" class="nav-link">Data Sebaran</a></li>								
 							</ul>
 						</nav>
 					</div>
@@ -88,6 +89,7 @@
 							<div class="col-md-8 text-center">
 								<h1>KENALI <span class="typed-words"></span></h1>
 								<h1 class="lead mb-5">COVID-19 SELF ASSESSMENT</h1>
+								<a type="button" class="btn btn-danger" href="#checkup">SELF CHECK-UP SEKARANG</a>
 							</div>
 						</div>
 
@@ -403,6 +405,137 @@
 		</div>
 
 		<div class="shadow-lg">
+			<div id="checkup">
+				<div class="container">
+					<h1 class="text-black text-center" style="padding-bottom: 5vh;">Self CheckUp</h1>
+					<div class="card">
+						<div class="card-header">
+							Self Checkup COVID-19
+						</div>
+						<div class="card-body">
+							<form name="formInput" action="#">
+								<div class="row">
+									<div class="col-md-9">
+										<label>Apakah sekarang anda merasakan demam <=38 C?</label>
+									</div>
+									<div class="col-md-3">
+										<label class="radio-inline">
+											<input type="radio" id="demam" name="demam" value="50">
+											Ya
+										</label>
+										<label class="radio-inline">
+											<input type="radio" id="demam" name="demam" value="0">
+											Tidak
+										</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-9">
+										<label>Apakah anda sering mengalami batuk kering?</label>
+									</div>
+									<div class="col-md-3">
+										<label class="radio-inline">
+											<input type="radio" id="batuk" name="batuk" value="50">
+											Ya
+										</label>
+										<label class="radio-inline">
+											<input type="radio" id="batuk" name="batuk" value="0">
+											Tidak
+										</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-9">
+										<label>Apakah tenggorokan anda terasa sakit?</label>
+									</div>
+									<div class="col-md-3">
+										<label class="radio-inline">
+											<input type="radio" id="tenggorokan" name="tenggorokan" value="20">
+											Ya
+										</label>
+										<label class="radio-inline">
+											<input type="radio" id="tenggorokan" name="tenggorokan" value="0">
+											Tidak
+										</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-9">
+										<label>Apakah anda merasa lemas seharian?</label>
+									</div>
+									<div class="col-md-3">
+										<label class="radio-inline">
+											<input type="radio" id="lemas" name="lemas" value="20">
+											Ya
+										</label>
+										<label class="radio-inline">
+											<input type="radio" id="lemas" name="lemas" value="0">
+											Tidak
+										</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-9">
+										<label>Apakah anda merasakan sakit kepala?</label>
+									</div>
+									<div class="col-md-3">
+										<label class="radio-inline">
+											<input type="radio" id="kepala" name="kepala" value="20">
+											Ya
+										</label>
+										<label class="radio-inline">
+											<input type="radio" id="kepala" name="kepala" value="0">
+											Tidak
+										</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-9">
+										<label>Apakah anda sering merasa sesak nafas?</label>
+									</div>
+									<div class="col-md-3">
+										<label class="radio-inline">
+											<input type="radio" id="sesak" name="sesak" value="30">
+											Ya
+										</label>
+										<label class="radio-inline">
+											<input type="radio" id="sesak" name="sesak" value="0">
+											Tidak
+										</label>
+									</div>
+								</div>
+								<a type="button" class="btn btn-button" onclick='check()' data-toggle="modal" data-target="#result">Cek Sekarang</a>
+							</form>	
+						</div>
+					</div>
+
+					<div class="modal fade" id="result" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="modalLabel">Hasil Cek</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<h4 id="hasil"></h4>
+									<p id="hasils"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="shadow-lg">
 			<div class="container" style="padding-top: 80px; padding-bottom: 80px;" id="data">
 				<h1 class="text-black text-center">DATA SEBARAN</h1>
 				<div class="row">
@@ -520,6 +653,7 @@
 	<script src="js/aos.js"></script>
 	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/jquery.sticky.js"></script>
+	<script src="checkup/check.js"></script>
 
 	<script src="js/typed.js"></script>
 	<script>
